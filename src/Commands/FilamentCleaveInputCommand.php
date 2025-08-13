@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Agungsp\FilamentCleaveInput\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class FilamentCleaveInputCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'filament-cleave-input';
 
     public $description = 'My command';
 
