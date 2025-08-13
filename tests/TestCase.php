@@ -2,6 +2,7 @@
 
 namespace Agungsp\FilamentCleaveInput\Tests;
 
+use Agungsp\FilamentCleaveInput\FilamentCleaveInputServiceProvider;
 use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
 use BladeUI\Icons\BladeIconsServiceProvider;
 use Filament\Actions\ActionsServiceProvider;
@@ -16,7 +17,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider;
-use Agungsp\FilamentCleaveInput\FilamentCleaveInputServiceProvider;
 
 class TestCase extends Orchestra
 {
