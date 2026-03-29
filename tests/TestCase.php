@@ -19,7 +19,21 @@ class TestCase extends Orchestra
 {
     protected function setUp(): void
     {
+        if (isset($_SERVER['GITHUB_ACTIONS'])) {
+            set_error_handler(function ($errno, $errstr, $errfile) {
+                if (str_contains($errstr, '.env') && str_contains($errfile, 'vendor')) {
+                    return true;
+                }
+
+                return false;
+            }, E_WARNING);
+        }
+
         parent::setUp();
+
+        if (isset($_SERVER['GITHUB_ACTIONS'])) {
+            restore_error_handler();
+        }
 
         Factory::guessFactoryNamesUsing(
             fn (string $modelName) => 'Agungsp\\FilamentCleaveInput\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
