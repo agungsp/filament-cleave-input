@@ -49,7 +49,7 @@ jobs:
 
       - name: Create .env
         run: |
-          mkdir -p vendor/orchestra/testbench-core/laravel
+          [ -d vendor/orchestra/testbench-core/laravel ] && mkdir -p vendor/orchestra/testbench-core/laravel
           touch vendor/orchestra/testbench-core/laravel/.env
 
       - name: Execute tests
