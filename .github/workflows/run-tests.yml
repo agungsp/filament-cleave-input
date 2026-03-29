@@ -49,8 +49,8 @@ jobs:
 
       - name: Create .env
         run: |
-          [ -d vendor/orchestra/testbench-core/laravel ] && mkdir -p vendor/orchestra/testbench-core/laravel
-          touch vendor/orchestra/testbench-core/laravel/.env
+          php -r "if (!is_dir('vendor/orchestra/testbench-core/laravel')) mkdir('vendor/orchestra/testbench-core/laravel', 0777, true);"
+          php -r "file_put_contents('vendor/orchestra/testbench-core/laravel/.env', '');"
 
       - name: Execute tests
         run: vendor/bin/pest --ci
